@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="https://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>FORM</title>
@@ -16,35 +16,35 @@
         </div>
     </div>
     <div class="form-container">
-    	<form action=""class="form">
+    	<form th:action="@{/confirmation}" th:object="${formData}" method="post" class="form">
     		<table>
     			<tr>
     				<td>
-    					<label>お名前：<input type="text"></label>
+    					<label>お名前：<input type="text" name="name" th:field="*{name}"></label>
     				</td>
     			</tr>
     			<tr>
     				<td>
-    					<label>ご年齢：<input type="number"></label>
+    					<label>ご年齢：<input type="number" name="age" th:field="*{age}"></label>
     				</td>
     			</tr>
     			<tr>
     				<td>
-    					<label>連絡先：<input type="email"></label>
+    					<label>連絡先：<input type="email" name="email" th:field="*{email}"></label>
     				</td>
     			</tr>
     			<tr>
     				<td>
     					<label>
-    					男 <input type="radio" name="gender">
-    					女 <input type="radio" name="gender">
-    					無回答 <input type="radio" name="gender">
+    					男 <input type="radio" name="gender" value="0" th:field="*{gender}">
+    					女 <input type="radio" name="gender" value="1" th:field="*{gender}">
+    					無回答 <input type="radio" name="gender" value="9" th:field="*{gender}">
     					</label>
     				</td>
     			</tr>
     			<tr>
     				<td>
-    					<label>お問い合わせ内容<br><textarea rows="4" cols="50"></textarea></label>
+    					<label>お問い合わせ内容<br><textarea rows="4" cols="50" name="content" th:field="*{content}"></textarea></label>
     				</td>
     			</tr>
     			<tr>
