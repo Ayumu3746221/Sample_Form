@@ -2,9 +2,61 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>FORM</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+	 <div class="header">
+        <div class="title">
+            <h1><a href="/">HOME</a></h1>
+        </div>
+        <div class="nav">
+            <p><a href="/form">お問い合わせ</a></p>
+            <p>管理者画面</p>
+        </div>
+    </div>
+    <div class="form-container">
+    	<form action=""class="form">
+    		<table>
+    			<tr>
+    				<td>
+    					<label>お名前：<input type="text"></label>
+    				</td>
+    			</tr>
+    			<tr>
+    				<td>
+    					<label>ご年齢：<input type="number"></label>
+    				</td>
+    			</tr>
+    			<tr>
+    				<td>
+    					<label>連絡先：<input type="email"></label>
+    				</td>
+    			</tr>
+    			<tr>
+    				<td>
+    					<label>
+    					男 <input type="radio" name="gender">
+    					女 <input type="radio" name="gender">
+    					無回答 <input type="radio" name="gender">
+    					</label>
+    				</td>
+    			</tr>
+    			<tr>
+    				<td>
+    					<label>お問い合わせ内容<br><textarea rows="4" cols="50"></textarea></label>
+    				</td>
+    			</tr>
+    			<tr>
+    				<td>
+    					<div class="submit">
+    						<input type="submit" value="送信">
+    						<input type="submit" value="キャンセル">
+    					</div>
+    				</td>
+    			</tr>
+    		</table>
+    	</form>
+    </div>
 </body>
 </html>
