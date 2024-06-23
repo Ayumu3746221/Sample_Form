@@ -20,21 +20,25 @@
     		<table>
     			<tr>
     				<td>
-    					<label>お名前：<input type="text" name="name" th:field="*{name}"></label>
+    					<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class = "error-message"></div>
+    					<label>お名前：<input type="text" name="name" th:field="*{name}"></label>				
     				</td>
     			</tr>
     			<tr>
     				<td>
+    					<div th:if="${#fields.hasErrors('age')}" th:errors="*{age}" class = "error-message"></div>
     					<label>ご年齢：<input type="number" name="age" th:field="*{age}"></label>
     				</td>
     			</tr>
     			<tr>
     				<td>
+    					<div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class = "error-message"></div>
     					<label>連絡先：<input type="email" name="email" th:field="*{email}"></label>
     				</td>
     			</tr>
     			<tr>
     				<td>
+    					<div th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}" class = "error-message"></div>
     					<label>
     					男 <input type="radio" name="gender" value="0" th:field="*{gender}">
     					女 <input type="radio" name="gender" value="1" th:field="*{gender}">
@@ -44,13 +48,14 @@
     			</tr>
     			<tr>
     				<td>
+    					<div th:if="${#fields.hasErrors('content')}" th:errors="*{content}" class = "error-message"></div>
     					<label>お問い合わせ内容<br><textarea rows="4" cols="50" name="content" th:field="*{content}"></textarea></label>
     				</td>
     			</tr>
     			<tr>
     				<td>
     					<div class="submit">
-    						<input type="submit" value="送信">
+    						<input type="submit" value="送信" th:formaction="@{/confirmation}">
     						<input type="submit" value="キャンセル" th:formaction="@{/cancel}">
     					</div>
     				</td>

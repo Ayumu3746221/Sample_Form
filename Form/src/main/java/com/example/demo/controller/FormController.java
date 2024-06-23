@@ -9,6 +9,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.demo.data.FormData;
 
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 
 @Controller
 public class FormController {
@@ -24,9 +26,17 @@ public class FormController {
 	}
 	
 	@PostMapping("/confirmation")
-	public ModelAndView toForm(@ModelAttribute FormData formData, ModelAndView mv) {
-		mv.setViewName("confirmation");
-		mv.addObject("formData", formData);
+	public ModelAndView toForm(@ModelAttribute @Validated FormData formData,BindingResult bindingResult,ModelAndView mv) {
+		System.out.println(bindingResult);
+		System.out.println(formData);
+		if (bindingResult.hasErrors()) {
+			//エラーあり
+			mv.setViewName("Form");
+		}else {
+			//エラーなし
+			mv.setViewName("confirmation");
+			mv.addObject("formData", formData);
+		}
 		return mv;
 	}
 	

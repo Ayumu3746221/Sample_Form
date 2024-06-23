@@ -35,3 +35,4 @@ build/
 ### 追記 ###
 application.properties
 .DS_Store
+*.DS_store
