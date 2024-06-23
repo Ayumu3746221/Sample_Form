@@ -29,4 +29,9 @@ public class FormController {
 		mv.addObject("formData", formData);
 		return mv;
 	}
+	
+	@PostMapping("/cancel")
+	public String calcelForm() {
+		return "Home";
+	}
 }
