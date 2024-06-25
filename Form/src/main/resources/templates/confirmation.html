@@ -23,7 +23,7 @@
 			</tr>
 			<tr>
 				<td>性別</td>
-				<td th:text="*{gender}"></td>
+				<td th:text="*{gender == 0 ? '男' : (gender == 1 ? '女': (gender == 9 ? '無回答':'error'))}"></td>
 			</tr>
 			<tr>
 				<td>お問い合わせ内容</td>
