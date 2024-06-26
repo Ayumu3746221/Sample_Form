@@ -8,6 +8,8 @@ import lombok.Data;
 @Data
 public class FormData {
 	
+	private Integer idInteger;
+	
 	@NotBlank(message = "お名前を入力して下さい")
 	private String name;
 	

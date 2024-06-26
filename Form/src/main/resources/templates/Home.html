@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="https://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>HOME</title>
@@ -12,7 +12,7 @@
         </div>
         <div class="nav">
             <p><a href="/form">お問い合わせ</a></p>
-            <p>管理者画面</p>
+            <p><a th:href="@{/administrator}">管理者画面</a></p>
         </div>
     </div>
     <div class="main">

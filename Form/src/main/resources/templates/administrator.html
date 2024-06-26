@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>管理者画面</title>
+<link rel="stylesheet" href="css/formcontent.css">
+</head>
+<body>
+	<div class="header">
+        <div class="title">
+            <h1><a href="/">HOME</a></h1>
+        </div>
+        <div class="nav">
+            <p><a href="/form">お問い合わせ</a></p>
+            <p>管理者画面</p>
+        </div>
+    </div>
+	<div class="formcontent">
+        <h1>お問い合わせ内容</h1>
+        <table class="inquiry-table">
+            <tr>
+                <th>ID</th>
+                <th>名前</th>
+                <th>連絡先</th>
+                <th>性別</th>
+                <th>お問い合わせ内容</th>
+            </tr>
+           <tr th:each="form:${formList}">
+           		<th th:text="${form.id}"></th>
+           		<th th:text="${form.name}"></th>
+           		<th th:text="${form.email}"></th>
+           		<th th:text="${form.gender}"></th>
+           		<th th:text="${form.content}"></th>
+           </tr>
+        </table>
+    </div>
+</body>
+</html>
