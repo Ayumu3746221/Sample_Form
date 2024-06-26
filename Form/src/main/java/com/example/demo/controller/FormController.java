@@ -13,7 +13,6 @@ import com.example.demo.entity.Form;
 import com.example.demo.repository.FormRepository;
 import com.example.demo.service.FormService;
 
-
 import lombok.AllArgsConstructor;
 
 import org.springframework.ui.Model;
@@ -57,6 +56,8 @@ public class FormController {
 		
 		if (!bindingResult.hasErrors() && isValid) {
 			//エラーなし
+			Form form = formData.toEntity();
+			formRepository.saveAndFlush(form);
 			mv.setViewName("confirmation");
 			mv.addObject("formData", formData);
 		}else {
